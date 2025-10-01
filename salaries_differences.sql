@@ -8,4 +8,4 @@ select ABS(MAX(CASE
 from db_employee employee
 join db_dept dept
 on employee.department_id = dept.id
-where dept.id = 4 OR dept.id = 1
+where dept.id = 4 OR dept.id = 1ABS
