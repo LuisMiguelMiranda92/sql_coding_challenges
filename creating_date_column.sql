@@ -1,6 +1,7 @@
 /*
 Write a query that creates a date column formatted YYYY-MM-DD.
 */
+
 SELECT date,
         RIGHT(LEFT(date, 10), 4) as year,
         LEFT(LEFT(date, 10), 2) as month,

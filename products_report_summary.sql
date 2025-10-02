@@ -3,9 +3,8 @@ Find the number of unique transactions and total sales for each of the product c
 Output the product categories, number of transactions, and total sales in descending order. 
 The sales column represents the total cost the customer paid for the product so no additional calculations need to be done on the column.
 Only include product categories that have products sold.
-
-
 */
+
 select p.product_category AS category,
         COUNT(DISTINCT t.transaction_id) as num_transactions,
         SUM(t.sales) as total_sales

@@ -1,4 +1,7 @@
-#Calculates the difference between the highest salaries in the marketing and engineering departments. Output just the absolute difference in salaries.
+/*
+Calculates the difference between the highest salaries in the marketing and engineering departments. 
+Output just the absolute difference in salaries.
+*/
 
 select ABS(MAX(CASE
                    WHEN dept.department = 'marketing' THEN employee.salary

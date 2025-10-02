@@ -1,7 +1,5 @@
 /*
 How many paid users had any calls in Apr 2020?
-
-
 */
 
 select COUNT(DISTINCT u.user_id) AS users

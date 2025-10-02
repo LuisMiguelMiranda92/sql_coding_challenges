@@ -1,4 +1,7 @@
-#Find the job titles of the employees with the highest salary. If multiple employees have the same highest salary, include the job titles for all such employees.
+/*
+Find the job titles of the employees with the highest salary. 
+If multiple employees have the same highest salary, include the job titles for all such employees.
+*/
 
 SELECT b.worker_title AS best_paid_title
 FROM worker a
