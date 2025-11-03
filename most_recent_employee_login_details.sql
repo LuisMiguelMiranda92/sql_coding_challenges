@@ -1,5 +1,5 @@
 /*
-mazon's information technology department is looking for information on employees' most recent logins.
+Amazon's information technology department is looking for information on employees' most recent logins.
 
 
 The output should include all information related to each employee's most recent login.
