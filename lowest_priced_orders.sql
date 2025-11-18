@@ -1,0 +1,4 @@
+/*
+Find the lowest order cost of each customer.
+Output the customer id along with the first name and the lowest order price.
+*/
