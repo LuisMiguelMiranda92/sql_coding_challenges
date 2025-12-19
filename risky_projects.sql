@@ -1,0 +1,29 @@
+/*
+You are given a set of projects and employee data. 
+Each project has a name, a budget, and a specific duration, 
+while each employee has an annual salary and may be assigned to one or more projects for particular periods. 
+The task is to identify which projects are overbudget. 
+A project is considered overbudget if the prorated cost of all employees assigned to it exceeds the project’s budget.
+
+
+To solve this, you must prorate each employee's annual salary based on the exact period they work on a given project, 
+relative to a full year. For example, if an employee works on a six-month project, 
+only half of their annual salary should be attributed to that project. 
+Sum these prorated salary amounts for all employees assigned to a project and compare the total with the project’s budget.
+
+
+Your output should be a list of overbudget projects, where each entry includes the project’s name, its budget, 
+and the total prorated employee expenses for that project. The total expenses should be rounded up to the nearest dollar. 
+Assume all years have 365 days and disregard leap years.
+*/
+select t1.title,
+        t1.budget,
+CEILING(SUM((t1.end_date - t1.start_date) * t3.salary / 365.0)) AS prorated_expense
+from linkedin_projects t1
+join linkedin_emp_projects t2
+    on t1.id = t2.project_id
+join linkedin_employees t3
+    on t3.id = t2.emp_id
+group by t1.title, t1.budget
+having t1.budget < SUM((t1.end_date - t1.start_date) * t3.salary / 365)
+order by t1.title
